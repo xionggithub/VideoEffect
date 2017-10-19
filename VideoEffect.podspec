@@ -24,8 +24,8 @@ Pod::Spec.new do |s|
 
   s.source    = { :git => 'https://phabricator.ushow.media/source/client-library/starmaker-VideoEffect.git', :tag => "#{s.version}" }
 
-  # s.source_files  = 'VideoEffect/**/*.{h,m,c,cpp,hpp,frag,vert,glsl}'
-  s.source_files  = 'VideoEffect/*.{h,m,c,cpp,hpp,frag,vert,glsl}'
+  s.source_files  = 'VideoEffect/**/*.{h,m,c,cpp,hpp,frag,vert,glsl}','VideoEffect/3rdparty/*.{h,m,c,cpp,hpp,frag,vert,glsl}'
+  # s.source_files  = 'VideoEffect/*.{h,m,c,cpp,hpp,frag,vert,glsl}'
 
   s.exclude_files = 'VideoEffect/*.{mk}'
   s.public_header_files = 'VideoEffect/**/*.h'
@@ -33,6 +33,7 @@ Pod::Spec.new do |s|
   s.libraries = 'z', 'c++', 'iconv'
   
   s.requires_arc = true
+
   s.subspec '3rdparty' do |tp|
       tp.source_files  = '3rdparty/*.{h,m,c,cpp,hpp,frag,vert,glsl}'
       tp.public_header_files = '3rdparty/*.h'
