@@ -34,12 +34,14 @@ Pod::Spec.new do |s|
   
   s.requires_arc = true
   s.subspec '3rdparty' do |tp|
+      tp.source_files  = '3rdparty/*.{h,m,c,cpp,hpp,frag,vert,glsl}'
+      tp.public_header_files = 'VideoEffect/**/*.h'
+
       tp.subspec 'libpng' do |lp|
         lp.source_files  = 'libpng/*.{h,m,c,cpp,hpp,frag,vert,glsl}'
         lp.public_header_files = 'libpng/*.h'
       end
   end
-  s.default_subspec
   s.xcconfig = {
       # 'USER_HEADER_SEARCH_PATHS' => '$(inherited) ${PODS_ROOT}/'
      # 'USER_HEADER_SEARCH_PATHS' => '"${PROJECT_DIR}/.."/**' 
