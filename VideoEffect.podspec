@@ -39,6 +39,7 @@ Pod::Spec.new do |s|
         lp.public_header_files = 'libpng/*.h'
       end
   end
+  s.default_subspec
   s.xcconfig = {
       # 'USER_HEADER_SEARCH_PATHS' => '$(inherited) ${PODS_ROOT}/'
      # 'USER_HEADER_SEARCH_PATHS' => '"${PROJECT_DIR}/.."/**' 
