@@ -33,6 +33,7 @@ Pod::Spec.new do |s|
   s.requires_arc = true
 
   s.xcconfig = {
-      'USER_HEADER_SEARCH_PATHS' => '$(inherited) ${PODS_ROOT}/'
+      # 'USER_HEADER_SEARCH_PATHS' => '$(inherited) ${PODS_ROOT}/'
+      s.xcconfig = { 'USER_HEADER_SEARCH_PATHS' => '"${PROJECT_DIR}/.."/**' }
     }
 end
