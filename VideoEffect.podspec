@@ -35,7 +35,7 @@ Pod::Spec.new do |s|
   s.requires_arc = true
   s.subspec '3rdparty' do |tp|
       tp.source_files  = '3rdparty/*.{h,m,c,cpp,hpp,frag,vert,glsl}'
-      tp.public_header_files = 'VideoEffect/**/*.h'
+      tp.public_header_files = '3rdparty/*.h'
 
       tp.subspec 'libpng' do |lp|
         lp.source_files  = 'libpng/*.{h,m,c,cpp,hpp,frag,vert,glsl}'
