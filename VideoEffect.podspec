@@ -24,14 +24,21 @@ Pod::Spec.new do |s|
 
   s.source    = { :git => 'https://phabricator.ushow.media/source/client-library/starmaker-VideoEffect.git', :tag => "#{s.version}" }
 
-  s.source_files  = 'VideoEffect/**/*.{h,m,c,cpp,hpp,frag,vert,glsl}'
+  # s.source_files  = 'VideoEffect/**/*.{h,m,c,cpp,hpp,frag,vert,glsl}'
+  s.source_files  = 'VideoEffect/*.{h,m,c,cpp,hpp,frag,vert,glsl}'
+
   s.exclude_files = 'VideoEffect/*.{mk}'
   s.public_header_files = 'VideoEffect/**/*.h'
 
   s.libraries = 'z', 'c++', 'iconv'
   
   s.requires_arc = true
-
+  s.subspec '3rdparty' do |tp|
+      tp.subspec 'libpng' do |lp|
+        lp.source_files  = 'libpng/*.{h,m,c,cpp,hpp,frag,vert,glsl}'
+        lp.public_header_files = 'libpng/*.h'
+      end
+  end
   s.xcconfig = {
       # 'USER_HEADER_SEARCH_PATHS' => '$(inherited) ${PODS_ROOT}/'
      # 'USER_HEADER_SEARCH_PATHS' => '"${PROJECT_DIR}/.."/**' 
