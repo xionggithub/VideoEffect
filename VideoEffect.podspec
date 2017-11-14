@@ -11,11 +11,11 @@ Pod::Spec.new do |s|
 
   s.name         = "VideoEffect"
   s.version      = "0.0.2"
-  s.summary      = "StarMaker private Libraries"
+  s.summary      = "A delightful iOS video framework"
 
-  s.homepage     = "https://phabricator.ushow.media/source/client-library/starmaker-VideoEffect"
+  s.homepage     = "https://github.com/xionggithub/VideoEffect.git"
   
-  s.license       = 'zlib'
+  s.license       = 'MIT'
   
   s.author             = { "xianti.xiong" => "xianti.xiong@ushow.media" }
   
