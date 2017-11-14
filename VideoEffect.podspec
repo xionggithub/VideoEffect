@@ -28,7 +28,7 @@ Pod::Spec.new do |s|
   s.source_files  = 'VideoEffect/*.{h,cpp}'
 
   s.exclude_files = 'VideoEffect/*.{mk}'
-  s.public_header_files = 'VideoEffect/**/*.h'
+  # s.public_header_files = 'VideoEffect/**/*.h'
 
   s.libraries = 'z', 'c++', 'iconv'
   
