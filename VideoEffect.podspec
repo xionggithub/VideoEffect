@@ -12,22 +12,21 @@ Pod::Spec.new do |s|
   s.version      = "0.1.0"
   s.license      = 'MIT'
   s.summary      = "A delightful iOS framework"
-  s.homepage     = "https://github.com/xionggithub/VideoEffect.git"
+  s.homepage     = "https://github.com/xionggithub/VideoEffect"
   s.author       = { "xiongxianti" => "1273040577@qq.com" }
   s.source   = { :git => 'https://github.com/xionggithub/VideoEffect.git', :tag => "#{s.version}"}
   s.requires_arc = true
 
-  # s.source_files  = 'VideoEffect/**/*.{h,m,c,cpp,hpp,frag,vert,glsl}','VideoEffect/3rdparty/*.{h,m,c,cpp,hpp,frag,vert,glsl}'
   s.source_files  = 'VideoEffect/*.{h,cpp}'
   
   s.ios.deployment_target = '7.0'
 
-  s.subspec '3rdparty' do |3rdparty|
-      tp.source_files  = 'VideoEffect/3rdparty/*.{h,m,c,cpp,hpp,frag,vert,glsl}'
-      tp.subspec 'libpng' do |libpng|
-        libpng.source_files  = 'VideoEffect/3rdparty/libpng/*.{h,m,c,cpp,hpp,frag,vert,glsl}'
-      end
-  end
+#   s.subspec '3rdparty' do |3rdparty|
+#       tp.source_files  = 'VideoEffect/3rdparty/*.{h,m,c,cpp,hpp,frag,vert,glsl}'
+#       tp.subspec 'libpng' do |libpng|
+#         libpng.source_files  = 'VideoEffect/3rdparty/libpng/*.{h,m,c,cpp,hpp,frag,vert,glsl}'
+#       end
+#   end
 #   s.subspec 'common' do |common|
 #       common.source_files  = 'VideoEffect/common/*.{h,m,c,cpp,hpp,frag,vert,glsl}'
 #   end
