@@ -52,53 +52,53 @@ Pod::Spec.new do |s|
       platform_dependent.source_files  = 'VideoEffect/platform_dependent/*.{h,m,c,cpp,hpp,frag,vert,glsl}'
   end
   
-#   s.subspec 'videoeffect' do |videoeffect|
-#       videoeffect.source_files  = 'VideoEffect/videoeffect/*.{h,m,c,cpp,hpp,frag,vert,glsl}'
-#       videoeffect.subspec 'blur_scene' do |bs|
-#         bs.source_files  = 'VideoEffect/videoeffect/blur_scene/*.{h,m,c,cpp,hpp,frag,vert,glsl}'
-#         bs.subspec 'shader' do |shader|
-#           shader.source_files  = 'VideoEffect/videoeffect/blur_scen/shader/*.{h,m,c,cpp,hpp,frag,vert,glsl}'
-#         end
-#       end
+  s.subspec 'videoeffect' do |videoeffect|
+      videoeffect.source_files  = 'VideoEffect/videoeffect/*.{h,m,c,cpp,hpp,frag,vert,glsl}'
+      videoeffect.subspec 'blur_scene' do |blur_scene|
+        blur_scene.source_files  = 'VideoEffect/videoeffect/blur_scene/*.{h,m,c,cpp,hpp,frag,vert,glsl}'
+        blur_scene.subspec 'shader' do |shader|
+          shader.source_files  = 'VideoEffect/videoeffect/blur_scen/shader/*.{h,m,c,cpp,hpp,frag,vert,glsl}'
+        end
+      end
     
-#        videoeffect.subspec 'image_effect' do |image_effect|
-#          image_effect.source_files  = 'VideoEffect/videoeffect/image_effect/*.{h,m,c,cpp,hpp,frag,vert,glsl}'
-#          image_effect.subspec 'beautify' do |beautify|
-#            beautify.source_files  = 'VideoEffect/videoeffect/image_effect/beautify/*.{h,m,c,cpp,hpp,frag,vert,glsl}'
-#          end
+      videoeffect.subspec 'image_effect' do |image_effect|
+         image_effect.source_files  = 'VideoEffect/videoeffect/image_effect/*.{h,m,c,cpp,hpp,frag,vert,glsl}'
+         image_effect.subspec 'beautify' do |beautify|
+           beautify.source_files  = 'VideoEffect/videoeffect/image_effect/beautify/*.{h,m,c,cpp,hpp,frag,vert,glsl}'
+         end
         
-#          image_effect.subspec 'beautify_face' do |beautify_face|
-#            beautify_face.source_files  = 'VideoEffect/videoeffect/image_effect/beautify_face/*.{h,m,c,cpp,hpp,frag,vert,glsl}'
-#          end
+         image_effect.subspec 'beautify_face' do |beautify_face|
+           beautify_face.source_files  = 'VideoEffect/videoeffect/image_effect/beautify_face/*.{h,m,c,cpp,hpp,frag,vert,glsl}'
+         end
         
-#          image_effect.subspec 'highpass' do |highpass|
-#            highpass.source_files  = 'VideoEffect/videoeffect/image_effect/highpass/*.{h,m,c,cpp,hpp,frag,vert,glsl}'
-#          end
+         image_effect.subspec 'highpass' do |highpass|
+           highpass.source_files  = 'VideoEffect/videoeffect/image_effect/highpass/*.{h,m,c,cpp,hpp,frag,vert,glsl}'
+         end
         
-#          image_effect.subspec 'thin' do |thin|
-#            thin.source_files  = 'VideoEffect/videoeffect/image_effect/thin/*.{h,m,c,cpp,hpp,frag,vert,glsl}'
-#          end
+         image_effect.subspec 'thin' do |thin|
+           thin.source_files  = 'VideoEffect/videoeffect/image_effect/thin/*.{h,m,c,cpp,hpp,frag,vert,glsl}'
+         end
         
-#          image_effect.subspec 'water_mask' do |water_mask|
-#            water_mask.source_files  = 'VideoEffect/videoeffect/image_effect/water_mask/*.{h,m,c,cpp,hpp,frag,vert,glsl}'
-#          end
+         image_effect.subspec 'water_mask' do |water_mask|
+           water_mask.source_files  = 'VideoEffect/videoeffect/image_effect/water_mask/*.{h,m,c,cpp,hpp,frag,vert,glsl}'
+         end
         
-#          image_effect.subspec 'whitening' do |whitening|
-#            whitening.source_files  = 'VideoEffect/videoeffect/image_effect/whitening/*.{h,m,c,cpp,hpp,frag,vert,glsl}'
-#            whitening.subspec 'shader' do |shader|
-#             shader.source_files  = 'VideoEffect/videoeffect/image_effect/whitening/shader/*.{h,m,c,cpp,hpp,frag,vert,glsl}'
-#            end
-#          end
-       
-#        videoeffect.subspec 'png_sequence' do |png_sequence|
-#           png_sequence.source_files  = 'VideoEffect/videoeffect/png_sequence/*.{h,m,c,cpp,hpp,frag,vert,glsl}'
-#        end
+         image_effect.subspec 'whitening' do |whitening|
+           whitening.source_files  = 'VideoEffect/videoeffect/image_effect/whitening/*.{h,m,c,cpp,hpp,frag,vert,glsl}'
+           whitening.subspec 'shader' do |shader|
+            shader.source_files  = 'VideoEffect/videoeffect/image_effect/whitening/shader/*.{h,m,c,cpp,hpp,frag,vert,glsl}'
+           end
+         end
+       end
+       videoeffect.subspec 'png_sequence' do |png_sequence|
+          png_sequence.source_files  = 'VideoEffect/videoeffect/png_sequence/*.{h,m,c,cpp,hpp,frag,vert,glsl}'
+       end
     
-#        videoeffect.subspec 'saturation_scene' do |saturation_scene|
-#         saturation_scene.source_files  = 'VideoEffect/videoeffect/saturation_scene/*.{h,m,c,cpp,hpp,frag,vert,glsl}'
-#        end
-#     end
+       videoeffect.subspec 'saturation_scene' do |saturation_scene|
+        saturation_scene.source_files  = 'VideoEffect/videoeffect/saturation_scene/*.{h,m,c,cpp,hpp,frag,vert,glsl}'
+       end
+    end
     s.subspec 'videoeffect_avc' do |videoeffect_avc|
-      videoeffect_avc.source_files  = 'VideoEffect/videoeffect_avc/*.{h,m,c,cpp,hpp,frag,vert,glsl}'
+      videoeffect_avc.source_files  = 'VideoEffect/videoeffect_avc/*.{h,m,c,cpp,hpp,frag,vert,glsl,acv}'
   end
 end
