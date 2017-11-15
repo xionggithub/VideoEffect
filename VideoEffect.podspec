@@ -101,4 +101,8 @@ Pod::Spec.new do |s|
     s.subspec 'videoeffect_avc' do |videoeffect_avc|
       videoeffect_avc.source_files  = 'VideoEffect/videoeffect_avc/*.{h,m,c,cpp,hpp,frag,vert,glsl,acv}'
   end
+  
+  s.xcconfig = {
+      'USER_HEADER_SEARCH_PATHS' => '$(inherited) ${PODS_ROOT}/'
+    }
 end
