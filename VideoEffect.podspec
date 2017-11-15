@@ -7,34 +7,23 @@
 #
 
 Pod::Spec.new do |s|
-
-
+  
   s.name         = "VideoEffect"
   s.version      = "0.1.0"
-  s.summary      = "A delightful iOS video framework"
-
-  s.homepage     = "https://github.com/xionggithub/VideoEffect.git"
-  
   s.license      = 'MIT'
- 
+  s.summary      = "A delightful iOS framework"
+  s.homepage     = "https://github.com/xionggithub/VideoEffect.git"
   s.author       = { "xiongxianti" => "1273040577@qq.com" }
-
-  s.platform     = :ios, "9.0"
-
   s.source   = { :git => 'https://github.com/xionggithub/VideoEffect.git', :tag => "#{s.version}"}
+  s.requires_arc = true
 
   # s.source_files  = 'VideoEffect/**/*.{h,m,c,cpp,hpp,frag,vert,glsl}','VideoEffect/3rdparty/*.{h,m,c,cpp,hpp,frag,vert,glsl}'
   s.source_files  = 'VideoEffect/*.{h,cpp}'
-
-  s.exclude_files = 'VideoEffect/*.{mk}'
-
-  # s.libraries = 'z', 'c++', 'iconv'
   
-  s.requires_arc = true
+  s.ios.deployment_target = '7.0'
 
   s.subspec '3rdparty' do |3rdparty|
       tp.source_files  = 'VideoEffect/3rdparty/*.{h,m,c,cpp,hpp,frag,vert,glsl}'
-
       tp.subspec 'libpng' do |libpng|
         libpng.source_files  = 'VideoEffect/3rdparty/libpng/*.{h,m,c,cpp,hpp,frag,vert,glsl}'
       end
