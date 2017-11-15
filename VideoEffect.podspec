@@ -16,10 +16,9 @@ Pod::Spec.new do |s|
   s.homepage     = "https://github.com/xionggithub/VideoEffect.git"
   
   s.license       = 'MIT'
-  
-  s.author             = { "xianti.xiong" => "xianti.xiong@ushow.media" }
-  
-  s.platform     = :ios
+ 
+  s.author             = { "xiongxianti" => "1273040577@qq.com" }
+
   s.platform     = :ios, "9.0"
 
   s.source    = { :git => 'https://phabricator.ushow.media/source/client-library/starmaker-VideoEffect.git', :tag => "#{s.version}" }
@@ -28,7 +27,6 @@ Pod::Spec.new do |s|
   s.source_files  = 'VideoEffect/*.{h,cpp}'
 
   s.exclude_files = 'VideoEffect/*.{mk}'
-  # s.public_header_files = 'VideoEffect/**/*.h'
 
   # s.libraries = 'z', 'c++', 'iconv'
   
