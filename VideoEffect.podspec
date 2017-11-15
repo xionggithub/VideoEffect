@@ -103,6 +103,6 @@ Pod::Spec.new do |s|
   end
   
   s.xcconfig = {
-      'USER_HEADER_SEARCH_PATHS' => '$(inherited) ${PODS_ROOT}/'
+      'USER_HEADER_SEARCH_PATHS' => '$(inherited) ${SRCROOT}/'
     }
 end
