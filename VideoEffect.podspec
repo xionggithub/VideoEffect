@@ -10,18 +10,18 @@ Pod::Spec.new do |s|
 
 
   s.name         = "VideoEffect"
-  s.version      = "0.0.2"
+  s.version      = "0.1.0"
   s.summary      = "A delightful iOS video framework"
 
   s.homepage     = "https://github.com/xionggithub/VideoEffect.git"
   
-  s.license       = 'MIT'
+  s.license      = 'MIT'
  
-  s.author             = { "xiongxianti" => "1273040577@qq.com" }
+  s.author       = { "xiongxianti" => "1273040577@qq.com" }
 
   s.platform     = :ios, "9.0"
 
-  s.source    = { :git => 'https://phabricator.ushow.media/source/client-library/starmaker-VideoEffect.git', :tag => "#{s.version}" }
+  s.source   = { :git => 'https://github.com/xionggithub/VideoEffect.git', :tag => "#{s.version}"}
 
   # s.source_files  = 'VideoEffect/**/*.{h,m,c,cpp,hpp,frag,vert,glsl}','VideoEffect/3rdparty/*.{h,m,c,cpp,hpp,frag,vert,glsl}'
   s.source_files  = 'VideoEffect/*.{h,cpp}'
