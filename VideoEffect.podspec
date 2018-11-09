@@ -123,8 +123,5 @@ Pod::Spec.new do |s|
       videoeffect_avc.source_files  = 'VideoEffect/videoeffect_avc/*.{h,m,c,cpp,hpp,frag,vert,glsl,acv}'
       videoeffect_avc.public_header_files = 'VideoEffect/videoeffect_avc/*.{h}'
   end
-  
-  s.xcconfig = {
-      #'USER_HEADER_SEARCH_PATHS' => '$(inherited) ${SRCROOT}/'
-    }
+  s.xcconfig = { 'CLANG_MODULES_AUTOLINK' => 'YES' }
 end
