@@ -23,7 +23,7 @@ Pod::Spec.new do |s|
 
   s.ios.deployment_target = '7.0'
 #   s.dependency "GPUImage",'0.1.7'
-  s.dependency 'GPUImage', git: 'https://phabricator.ushow.media/source/starmaker-GPUImage.git', :commit => '3b670b787d9ff951ad1db3ea5fd32bb5677d5b38'
+  s.dependency 'GPUImage', :git=> 'https://phabricator.ushow.media/source/starmaker-GPUImage.git'
   s.subspec '3rdparty' do |tp|
       tp.source_files  = 'VideoEffect/3rdparty/*.{h,m,c,cpp,hpp,frag,vert,glsl}'
 #       tp.public_header_files = 'VideoEffect/3rdparty/*.{h}'
