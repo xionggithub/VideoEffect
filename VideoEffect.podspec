@@ -18,7 +18,7 @@ Pod::Spec.new do |s|
   s.requires_arc = true
 
   s.source_files  = 'VideoEffect/*.{h,cpp,mm}'
-  s.public_header_files = 'VideoEffect/video_effect_processor.h'
+  s.public_header_files = 'VideoEffect/*.{h}'
 
   s.ios.deployment_target = '7.0'
   s.dependency 'GPUImage', '0.1.7'
