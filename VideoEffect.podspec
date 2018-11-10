@@ -16,13 +16,12 @@ Pod::Spec.new do |s|
   s.author       = { "xiongxianti" => "1273040577@qq.com" }
   s.source   = { :git => 'https://github.com/xionggithub/VideoEffect.git', :tag => "#{s.version}"}
   s.requires_arc = true
-
-  s.source_files  = 'VideoEffect/*.{h,cpp,mm}'
-  s.public_header_files = 'VideoEffect/*.{h}'
-
+  
   s.ios.deployment_target = '7.0'
   s.dependency 'GPUImage', '0.1.7'
   
+  s.source_files  = 'VideoEffect/*.{h,cpp,mm}, VideoEffect/videoeffect_avc/*.{acv}'
+  s.public_header_files = 'VideoEffect/*.{h}'
   #acv resources
   s.resources = ["VideoEffect/videoeffect_avc/*.{acv}"]
   s.subspec '3rdparty' do |tp|
