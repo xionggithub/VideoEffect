@@ -126,7 +126,7 @@ Pod::Spec.new do |s|
 #       videoeffect_avc.public_header_files = ''
 #     end
     s.subspec 'Category' do |c|
-      c.source_files = = 'VideoEffect/videoeffect_avc/*.{acv}'
+      c.source_files = 'VideoEffect/videoeffect_avc/*.{acv}'
       c.resource_bundle = {
           'VideoEffect' => ['VideoEffect/Resources/*']
         }
