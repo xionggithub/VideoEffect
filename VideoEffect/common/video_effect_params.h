@@ -57,6 +57,7 @@
 #define HUE_EFFECT_HUE_ANGLE_CHANGED                                "hue_effect_hue_angle_changed"
 #define HUE_EFFECT_HUE_ANGLE                                        "hue_effect_hue_angle"
 #define SMOOTH_SKIN_EFFECT_PARAM_CHANGED                            "smooth_skin_effect_param_changed"
+#define SMOOTH_SKIN_EFFECT_PARAM_ENABLED                            "smooth_skin_effect_param_enabled"
 #define MASK_CURVE_PROGRESS                                         "mask_curve_progress"
 #define SOFT_LIGHT_PROGRESS                                         "soft_light_progress"
 #define S_CURVE_PROGRESS                                            "s_curve_progress"
