@@ -20,10 +20,11 @@ Pod::Spec.new do |s|
   s.ios.deployment_target = '7.0'
   s.dependency 'GPUImage', '0.1.7'
   
-  s.source_files  = 'VideoEffect/*.{h,cpp,mm}, VideoEffect/videoeffect_avc/*.{acv}'
+  s.source_files  = 'VideoEffect/*.{h,cpp,mm}'
   s.public_header_files = 'VideoEffect/*.{h}'
   #acv resources
-  s.resources = ["VideoEffect/videoeffect_avc/*.{acv}"]
+  s.resources = 'VideoEffect/videoeffect_avc/*.{acv}'
+  
   s.subspec '3rdparty' do |tp|
       tp.source_files  = 'VideoEffect/3rdparty/*.{h,m,c,cpp,hpp,frag,vert,glsl}'
       tp.public_header_files = ''
