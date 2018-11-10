@@ -128,7 +128,7 @@ Pod::Spec.new do |s|
     s.subspec 'Category' do |c|
       c.source_files = 'VideoEffect/videoeffect_avc/*.{acv}'
       c.resource_bundle = {
-          'VideoEffect' => ['VideoEffect/Resources/*']
+          'VideoEffect' => ['VideoEffect/videoeffect_avc/*.{acv}']
         }
     end
   s.xcconfig = {
