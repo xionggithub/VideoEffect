@@ -127,6 +127,6 @@ Pod::Spec.new do |s|
   end
   s.xcconfig = { 
       'USER_HEADER_SEARCH_PATHS' => '$(inherited) ${PODS_ROOT}/VideoEffect/VideoEffect' 
-      'FRAMEWORK_SEARCH_PATHS' => $(inherited) "${PODS_CONFIGURATION_BUILD_DIR}/GPUImage"
+      'FRAMEWORK_SEARCH_PATHS' => '$(inherited) ${PODS_CONFIGURATION_BUILD_DIR}/GPUImage'
     }
 end
