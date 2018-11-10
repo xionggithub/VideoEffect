@@ -22,6 +22,7 @@ Pod::Spec.new do |s|
   s.public_header_files = 'VideoEffect/VideoEffectProcessFilter.h'
 
   s.ios.deployment_target = '7.0'
+  s.dependency "GPUImage",'0.1.7'
 
   s.subspec '3rdparty' do |tp|
       tp.source_files  = 'VideoEffect/3rdparty/*.{h,m,c,cpp,hpp,frag,vert,glsl}'
@@ -125,8 +126,5 @@ Pod::Spec.new do |s|
       videoeffect_avc.source_files  = 'VideoEffect/videoeffect_avc/*.{h,m,c,cpp,hpp,frag,vert,glsl,acv}'
 #       videoeffect_avc.public_header_files = 'VideoEffect/videoeffect_avc/*.{h}'
   end
-  s.xcconfig = { 
-      'USER_HEADER_SEARCH_PATHS' => '$(inherited) ${PODS_ROOT}/VideoEffect/VideoEffect' 
-      'FRAMEWORK_SEARCH_PATHS' => '$(inherited) ${PODS_CONFIGURATION_BUILD_DIR}/GPUImage'
-    }
+  s.xcconfig = {'USER_HEADER_SEARCH_PATHS' => '$(inherited) ${PODS_ROOT}/VideoEffect/VideoEffect'}
 end
