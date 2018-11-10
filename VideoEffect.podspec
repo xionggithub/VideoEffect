@@ -121,10 +121,16 @@ Pod::Spec.new do |s|
         saturation_scene.public_header_files = ''
        end
     end
-    s.subspec 'videoeffect_avc' do |videoeffect_avc|
-      videoeffect_avc.source_files  = 'VideoEffect/videoeffect_avc/*.{h,m,c,cpp,hpp,frag,vert,glsl,acv}'
-      videoeffect_avc.public_header_files = ''
-  end
+#     s.subspec 'videoeffect_avc' do |videoeffect_avc|
+#       videoeffect_avc.source_files  = 'VideoEffect/videoeffect_avc/*.{h,m,c,cpp,hpp,frag,vert,glsl,acv}'
+#       videoeffect_avc.public_header_files = ''
+#     end
+    s.subspec 'Category' do |c|
+      c.source_files = = 'VideoEffect/videoeffect_avc/*.{acv}'
+      c.resource_bundle = {
+          'VideoEffect' => ['VideoEffect/Resources/*']
+        }
+    end
   s.xcconfig = {
     'USER_HEADER_SEARCH_PATHS' => '$(inherited) ${PODS_ROOT}/VideoEffect/VideoEffect'
     }
