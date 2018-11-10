@@ -14,6 +14,8 @@ typedef NS_ENUM(NSUInteger, VideoEffectFilterType) {
 @property (nonatomic, assign) BOOL enableBeauty;
 
 #pragma mark - Utility
+- (instancetype)initWithSize:(CGSize)size;
+
 + (void)checkGLError;
 
 - (void)initializeFilterWithType:(VideoEffectFilterType)type;

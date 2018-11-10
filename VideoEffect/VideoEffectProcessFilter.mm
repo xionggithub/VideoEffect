@@ -21,11 +21,17 @@
 
 @implementation VideoEffectProcessFilter
 - (instancetype)init {
+    return [self initWithSize:CGSizeMake(480, 480)];
+}
+- (instancetype)initWithSize:(CGSize)size {
     self = [super init];
     if (self) {
+        if (size.width * size.height <= 0) {
+            return nil;
+        }
         dispatch_sync([GPUImageContext sharedContextQueue], ^{
-            self->_width = 480;
-            self->_height = 480;
+            self->_width = size.width;
+            self->_height = size.height;
             self->_enableBeauty = YES;
             self->_isFilterChanged = YES;
             self->_outputTexId = -1;
@@ -225,8 +231,9 @@
                                                                                   onlyTexture:NO];
         self.outputTexId = [outputFramebuffer texture];
     }
-    
-    [outputFramebuffer lock];
+    if (usingNextFrameForImageCapture) {
+        [outputFramebuffer lock];
+    }
     ImagePosition imagePosition;
     imagePosition.x = 0;
     imagePosition.y = 0;
