@@ -24,7 +24,7 @@ Pod::Spec.new do |s|
   s.dependency 'GPUImage', '0.1.7'
   
   #acv resources
-  s.resources = = ["VideoEffect/videoeffect_avc/*.{acv}"]
+  s.resources = ["VideoEffect/videoeffect_avc/*.{acv}"]
   
   s.subspec '3rdparty' do |tp|
       tp.source_files  = 'VideoEffect/3rdparty/*.{h,m,c,cpp,hpp,frag,vert,glsl}'
