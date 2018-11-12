@@ -67,14 +67,39 @@
     _isFilterChanged = YES;
 }
 
+- (NSData *)dataForResource:(nullable NSString *)name ofType:(nullable NSString *)ext{
+    if (name.length <= 0 || ext.length <= 0) {
+        return nil;
+    }
+    NSData *data = nil;
+    NSFileManager *fm = [NSFileManager defaultManager];
+    NSBundle *bundle = [NSBundle mainBundle];
+    NSString *path = [bundle pathForResource:name ofType:ext];
+    if (path.length > 0 &&  [fm fileExistsAtPath:path]) {
+        //从main bundle 中获取
+        data = [NSData dataWithContentsOfFile:path];
+        return data;
+    }else{
+        //从当前类所在bundle 中查找
+        bundle = [NSBundle bundleForClass:[self class]];
+        path = [bundle pathForResource:name ofType:ext];
+        if (path.length > 0 &&  [fm fileExistsAtPath:path]) {
+            data = [NSData dataWithContentsOfFile:path];
+            return data;
+        }else{
+            NSString *errorInfo = [NSString stringWithFormat:@"the file %@.%@ cann't be found in current bundle!",name,ext];
+            NSAssert(data, errorInfo);
+            return nil;
+        }
+    }
+}
 - (BOOL)switchFilterType
 {
     self.processor->removeAllFilters();
     bool ret = true;
     int filterId = -1;
     if (_filterType == VideoEffectFilterTypeCool) {
-        NSString *filePath = [[NSBundle mainBundle] pathForResource:@"sm_cool" ofType:@"acv"];
-        NSData *myData = [NSData dataWithContentsOfFile:filePath];
+        NSData *myData = [self dataForResource:@"sm_cool" ofType:@"acv"];
         unsigned char*  _mACVBuffer = NULL;
         if (myData) {
             _mACVBuffer = new unsigned char[myData.length];
@@ -82,8 +107,7 @@
         }
         filterId = [self addFilterWithBuffer:_mACVBuffer bufferSize:int(myData.length)];
     }else if(VideoEffectFilterTypeVINTAGE == _filterType){
-        NSString *filePath = [[NSBundle mainBundle] pathForResource:@"sm_vintage" ofType:@"acv"];
-        NSData *myData = [NSData dataWithContentsOfFile:filePath];
+        NSData *myData = [self dataForResource:@"sm_vintage" ofType:@"acv"];
         unsigned char*  _mACVBuffer = NULL;
         if (myData) {
             _mACVBuffer = new unsigned char[myData.length];
@@ -91,8 +115,7 @@
         }
         filterId = [self addFilterWithBuffer:_mACVBuffer bufferSize:int(myData.length)];
     }else if(VideoEffectFilterTypeGinghamq == _filterType){
-        NSString *filePath = [[NSBundle mainBundle] pathForResource:@"sm_gingham" ofType:@"acv"];
-        NSData *myData = [NSData dataWithContentsOfFile:filePath];
+        NSData *myData = [self dataForResource:@"sm_gingham" ofType:@"acv"];
         unsigned char*  _mACVBuffer = NULL;
         if (myData) {
             _mACVBuffer = new unsigned char[myData.length];
@@ -100,8 +123,7 @@
         }
         filterId = [self addFilterWithBuffer:_mACVBuffer bufferSize:int(myData.length)];
     }else if(VideoEffectFilterTypeCrema == _filterType){
-        NSString *filePath = [[NSBundle mainBundle] pathForResource:@"sm_crema" ofType:@"acv"];
-        NSData *myData = [NSData dataWithContentsOfFile:filePath];
+        NSData *myData = [self dataForResource:@"sm_crema" ofType:@"acv"];
         unsigned char*  _mACVBuffer = NULL;
         if (myData) {
             _mACVBuffer = new unsigned char[myData.length];
@@ -206,13 +228,13 @@
             break;
     }
     return filterId;
-
+    
 }
 - (void)renderToTextureWithVertices:(const GLfloat *)vertices
                  textureCoordinates:(const GLfloat *)textureCoordinates
 {
-//    [super renderToTextureWithVertices:vertices textureCoordinates:textureCoordinates];
-//    return;
+    //    [super renderToTextureWithVertices:vertices textureCoordinates:textureCoordinates];
+    //    return;
     GL_CHECK_ERROR("KTVMVFilter at the beginning of renderToTexture");
     if (self.preventRendering) {
         [firstInputFramebuffer unlock];
