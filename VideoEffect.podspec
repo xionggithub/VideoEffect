@@ -70,11 +70,12 @@ Pod::Spec.new do |s|
       videoeffect.source_files  = 'VideoEffect/videoeffect/*.{h,m,c,cpp,hpp,frag,vert,glsl}'
       videoeffect.private_header_files = 'VideoEffect/videoeffect/*.{h,hpp}'
       videoeffect.subspec 'blur_scene' do |blur_scene|
-        blur_scene.source_files  = 'VideoEffect/videoeffect/blur_scene/*.{h,m,c,cpp,hpp,frag,vert,glsl}'
+#         blur_scene.source_files  = 'VideoEffect/videoeffect/blur_scene/*.{h,m,c,cpp,hpp,frag,vert,glsl}'
+        blur_scene.source_files  = 'VideoEffect/videoeffect/blur_scene/*.{h,m,c,cpp,hpp}'
         blur_scene.private_header_files = 'VideoEffect/videoeffect/blur_scene/*.{h,hpp}'
         blur_scene.subspec 'shader' do |shader|
-          shader.source_files  = 'VideoEffect/videoeffect/blur_scene/shader/*.{h,m,c,cpp,hpp,frag,vert,glsl}'
-          shader.private_header_files = 'VideoEffect/videoeffect/blur_scene/shader/*.{h,hpp}'
+#           shader.source_files  = 'VideoEffect/videoeffect/blur_scene/shader/*.{h,m,c,cpp,hpp,frag,vert,glsl}'
+            s.resources = 'VideoEffect/videoeffect/blur_scene/shader/*.{frag,vert,glsl}'
         end
       end
     
